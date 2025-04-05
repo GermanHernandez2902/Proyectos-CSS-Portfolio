@@ -1,0 +1,135 @@
+@use '../abstracts/abstracts' as *;
+
+.header {
+    @include flex-column-center();
+    padding-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-image: linear-gradient($black, rgba(255,255,255,0.05));
+    margin-bottom: 40px;
+
+    &__title {
+        text-align: center;
+        width: max-content;
+        margin-bottom: 20px;
+    }
+
+    &__nav-principal {
+        margin-bottom: 49px;
+        @include padding-container();
+
+        ul {
+            @include reset-list();
+        }
+
+        &--icon {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 18px;
+            color: $white;
+            transition-duration: 0.3s;
+            &:hover {
+                color: $green;
+                transition-duration: 0.3s;
+            }
+        }
+    }
+
+    &__photo {
+        width: 100%;
+    }
+
+}
+
+// --> tablet
+.header {
+    @include breakpoint(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        background-image: none;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 20px;
+
+        &__title {
+            @include padding-container();
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__container-nav-principal {
+            background-color: $dark-grey;
+            position: relative;
+            width: 42%;
+        }
+
+        &__nav-principal {
+            padding-top: 30px;
+            
+            ul {
+                justify-content: end;
+                gap: 32px;
+            }
+
+            &--icon {
+                font-size: 20px;
+            }
+        }
+
+        &__photo {
+            position: absolute;
+            background-color: $dark-grey;
+            z-index: -1;
+        }
+    }
+}
+
+// --> tablet-medium
+.header {
+    @include breakpoint(tablet-medium) {
+        &__container-nav-principal {
+            width: 40%;
+        }
+    }
+}
+
+// --> tablethorizontal
+.header {
+    @include breakpoint(tablethorizontal) {
+        &__title {
+            padding-left: 80px;
+        }
+
+        &__container-nav-principal {
+            width: 38%;
+        }
+
+        &__nav-principal {
+            padding-right: 80px;
+        }
+    }
+}
+
+// --> desktop
+.header {
+    @include breakpoint(desktop) {
+        margin-bottom: 65px;
+        @include padding-desktop();
+
+        &__title { 
+            padding: 40px 0 0 0;
+            margin: 0;
+        }
+
+        &__container-nav-principal {
+            width: 42%;
+        }
+
+        &__nav-principal {
+            padding-top: 40px;
+            margin-bottom: 65px;
+        }
+    }
+}

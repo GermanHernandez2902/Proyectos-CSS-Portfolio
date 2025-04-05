@@ -1,0 +1,101 @@
+@use '../abstracts/abstracts' as *;
+
+.hero {
+    @include flex-column-center();
+    margin-bottom: 80px;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 24px;
+        .underline {
+            display: inline-block;
+            border-bottom: 4px $green solid;
+            margin-bottom: -2px;
+        }
+    }
+
+    &__description {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+}
+
+// --> tablet
+.hero{
+    @include breakpoint(tablet) {
+        align-items: start;
+        width: 75%;
+        margin-bottom: 60px;
+
+        &__title {
+            text-align: start;
+            margin-bottom: 60px;
+            span:first-child {
+                display: inline-block;
+            }
+
+            .underline {
+                border-bottom: 6px $green solid;
+            }
+        }
+
+        &__description {
+            text-align: start;
+            width: 80%;
+            margin-bottom: 34px;
+        }
+    }
+}
+
+// --> tablet medium
+.hero {
+    @include breakpoint(tabletmedium) {
+        width: 66%;
+        margin-bottom: 120px;
+    }
+}
+
+// --> tablet horizontal
+.hero {
+    @include breakpoint(tablethorizontal) {
+        margin-bottom: 180px;
+        width: 75%;
+
+        &__title {
+            margin-bottom: 70px;
+        }
+
+        &__description {
+            width: 60%;
+        }
+    }
+}
+
+// --> desktop
+
+.hero {
+    @include breakpoint(desktop) {
+        width: 78%;
+        &__title {
+            margin-bottom: 40px;
+        }
+
+        &__description {
+            margin-bottom: 66px;
+        }
+    }
+}
+
+// --> desktopxl
+
+.hero {
+    @include breakpoint(desktopxl) {
+        margin-bottom: 240px;
+        width: 60%;
+
+        &__title {
+            margin-bottom: 70px;
+        }
+
+    }
+}

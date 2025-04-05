@@ -1,0 +1,14 @@
+@use '../abstracts/abstracts' as *;
+
+.main {
+    @include padding-container();
+
+    @include breakpoint(tablethorizontal) {
+        @include paddind-tablethorizontal();
+    }
+
+    @include breakpoint(desktop) {
+        @include padding-desktop();
+    }
+}
+
